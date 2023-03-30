@@ -1,0 +1,388 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.transparent-btn {
+  padding: 0.5em 2em;
+  font-family: 'Public Sans', 'Serif';
+  font-weight: 500;
+  color: var(--ff-light);
+  background-color: var(--bg-dark);
+  border: 1px solid var(--bg-light);
+  border-radius: 25px;
+  z-index: 10;
+}
+
+.transparent-btn:hover, 
+.transparent-btn:focus {
+  background-color: var(--bg-light);
+  color: var(--ff-dark);
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --ff-dark: #36536B;
+  --ff-light: #FBFCFE;
+  --ff-red: #BA4270;
+  --ff-grey: #6C8294;
+
+  --bg-light: #EDF3F8;
+  --bg-dark: #1B262F;
+  --bg-red: #BA4270;
+  
+}
+
+
+/* Typeography */
+H1 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 32px;}
+H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
+H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
+H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 20px;}
+
+p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
+
+@media (min-width: 768px) {
+    H1 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 72px;}
+    H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 42px;}
+    H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 36px;}
+    H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
+    
+    p {font-family: 'Public Sans', sans-serif; font-weight: 300; font-size: 15px;}
+}
+
+.font-dark {
+  color: var(--ff-dark);
+}
+
+.font-light {
+  color: var(--ff-light);
+}
+
+.font-red {
+  color: var(--ff-red);
+}
+
+.font-gray {
+  color: #6C8294;
+}
+
+/* colors */
+
+.bg-light {
+  background-color: var(--bg-light);
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
+}
+
+.bg-red {
+  background-color: var(--bg-red);
+}
+
+/* images */
+
+.smartphone-img {
+  margin-left: 2em;
+  height: 250px;
+  z-index: 1;
+}
+
+/* Navbar */
+
+.navbar {
+  background-color: var(--bg-light);
+  background-image: url(/bg-pattern-circle.svg);
+  background-repeat: no-repeat;
+  background-position: top -245px right -200px;
+  color: var(--bg-dark);
+}
+
+.navbar-logo {
+  margin-right: 2em;
+}
+
+/* section 1 */
+
+.section1 {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.background-circle,
+.background-circle-2,
+.background-circle-3 {
+  z-index: 0;
+  position: absolute;
+  top: -200px;
+  width: 1080px; 
+}
+
+.background-circle-3 {
+  visibility: hidden;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-form,
+.info-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  position: static;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  display: static;
+  background-color: var(--bg-red);
+  color: var(--ff-light);
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.email-input {
+  border-radius: 20px;
+  padding-inline-start: 0.5em;
+  padding: 0.5em;
+  border: none;
+  width: 100%;
+}
+
+.contact-text {
+  align-self: center;
+  margin-top: 2em;
+  color: var(--ff-grey);
+}
+
+
+@media (min-width: 768px) {
+
+.background-circle {
+  top: -340px;
+  right: -200px;
+  width: 780px;
+}
+
+.background-circle-2 {
+  top: -440px;
+  left: -200px;
+  width: 780px;
+}
+
+.background-circle-3 {
+  visibility: visible;
+  top: 20%;
+  left: 75%;
+  width: 780px;
+}
+
+.hero-form,
+.info-form {
+  flex-direction: row;
+  position: relative;
+}
+
+.hero-form {
+  margin: 0;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.email-input {
+  width: 350px;
+  outline: none;
+  cursor: pointer;
+}
+
+.submit-btn {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  z-index: 1;
+  width: 200px;
+}
+
+.contact-text {
+  align-self: start;
+}
+
+
+.smartphone-img {
+  height: 550px;
+}
+
+}
+
+/* partners section */
+
+.client-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  align-items: center;
+  /* gap: 0.5em; */
+  padding: 0 1em;
+  margin-bottom: 3em;
+}
+
+.logo {
+  color: #fff;
+  margin: 1em;
+}
+
+.partner-text {
+  text-align: center;
+  line-height: 2.0;
+}
+
+@media(min-width: 768px) {
+  .partner-text {
+    text-align: left;
+    padding-right: 5em;
+  }
+
+  .client-logos {
+    gap: 0.5em
+  }
+}
+
+/* Info Image */
+
+.info-img {
+  width: 100px;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.info-illustrations {
+  margin-left: 1em;
+  z-index: 2;
+}
+
+
+@media(min-width: 768px) {
+  .info-illustrations {
+    margin-left: 0;
+  }
+}
+
+.app {
+  overflow: hidden;
+}
+
+.footer {
+  background-color: var(--bg-dark);
+  color: #fff;
+  padding: 2em;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1em;
+}
+
+@media (max-width: 568px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer-link {
+  color: rgba(251, 252, 254, 0.8);
+}
+
