@@ -1,19 +1,19 @@
-import Button from 'react-bootstrap/Button';
+
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {nanoid} from 'nanoid'
+import {Link} from 'react-router-dom'
+
 
 function NavBar() {
   return (
         <Navbar key={nanoid()} expand='lg'>
-          <Container fluid className="px-md-5 px-sm-2 py-lg-3 py-sm-1">
-            <Navbar.Brand href="#" className="navbar-logo">
+          <Container className=" py-lg-3 py-sm-1">
+            <Link to="/" className="navbar-logo">
               <img src="/logo.svg" alt="payapi logo" />
-            </Navbar.Brand>
+            </Link>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-lg`}
@@ -28,34 +28,15 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
-                  <Nav.Link className="mx-2 fw-bold" href="#action1">Pricing</Nav.Link>
-                  <Nav.Link className="mx-2 fw-bold" href="#action2">About</Nav.Link>
-                  <Nav.Link className="mx-2 fw-bold" href="#action2">Contact</Nav.Link>
-                  {/* <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-lg`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
+                  <Link to="/pricing" className="nav-link mx-2 fw-bold">Pricing</Link>
+                  <Link className="nav-link mx-2 fw-bold">About</Link>
+                  <Link className="nav-link mx-2 fw-bold">Contact</Link>
+                  
                 </Nav>
-                {/* <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form> */}
+              
               </Offcanvas.Body>
             </Navbar.Offcanvas>
+            <button className="submit-btn left" type="submit">Schedule a demo</button>
           </Container>
         </Navbar>
      

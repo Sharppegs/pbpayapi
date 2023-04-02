@@ -23,6 +23,8 @@ dd {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Set core root defaults */
@@ -35,6 +37,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: #EDF3F8;
   
 }
 
@@ -58,7 +61,8 @@ select {
   font: inherit;
 }
 
-.transparent-btn {
+.transparent-btn,
+.access-btn {
   padding: 0.5em 2em;
   font-family: 'Public Sans', 'Serif';
   font-weight: 500;
@@ -69,10 +73,25 @@ select {
   z-index: 10;
 }
 
+.access-btn {
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-dark);
+  color: var(--ff-dark);
+  margin-top: 1.5em;
+  padding: 0.5em 1.5em;
+}
+
 .transparent-btn:hover, 
 .transparent-btn:focus {
   background-color: var(--bg-light);
   color: var(--ff-dark);
+  cursor: pointer;
+}
+
+.access-btn:hover, 
+.access-btn:focus {
+  background-color: var(--bg-dark);
+  color: var(--ff-light);
   cursor: pointer;
 }
 
@@ -111,11 +130,11 @@ H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px
 H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
 H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 20px;}
 
-p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
+p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
 @media (min-width: 768px) {
     H1 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 72px;}
-    H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 42px;}
+    H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 56px;}
     H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 36px;}
     H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
     
@@ -170,6 +189,16 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
   color: var(--bg-dark);
 }
 
+.nav-link {
+  color: #36536B;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #5e666c;
+}
+
 .navbar-logo {
   margin-right: 2em;
 }
@@ -184,7 +213,8 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
 
 .background-circle,
 .background-circle-2,
-.background-circle-3 {
+.background-circle-3,
+.background-circle-4 {
   z-index: 0;
   position: absolute;
   top: -200px;
@@ -194,6 +224,7 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
 .background-circle-3 {
   visibility: hidden;
 }
+
 
 .hero-text {
   text-align: center;
@@ -218,6 +249,14 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
   font-weight: 500;
   padding: 0.5em;
   width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #bb6083;
+}
+
+.left {
+  display: none;
 }
 
 .email-input {
@@ -293,6 +332,13 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
   height: 550px;
 }
 
+.left {
+  display: inline-block;
+  margin-right: 5em;
+  margin-top: 1.5em;
+  align-self: center;
+}
+
 }
 
 /* partners section */
@@ -362,11 +408,13 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
 
 .footer-links {
   display: flex;
+  justify-content: center;
 }
 
 .social-icons {
   display: flex;
   gap: 1em;
+  justify-content: center;
 }
 
 @media (max-width: 568px) {
@@ -384,5 +432,39 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 15px;}
 
 .footer-link {
   color: rgba(251, 252, 254, 0.8);
+}
+
+/* Pricing */
+
+.plan {
+  padding-bottom: 2em;
+  border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+  margin-bottom: 1em;
+}
+
+.plan-text-desc {
+  text-align: center;
+  color: var(--ff-grey);
+}
+
+.price-numbers {
+  font-size: 56px;
+}
+
+.plan-list-item {
+  margin-bottom: 1em;
+}
+
+.tick {
+  color: var(--ff-red);
+  margin-right: 1em;
+}
+
+@media (min-width: 769px) {
+  .plan-text-desc {
+    text-align: left;
+    
+  }
+  
 }
 

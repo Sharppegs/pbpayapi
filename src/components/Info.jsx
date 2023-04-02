@@ -44,7 +44,7 @@ function Info() {
               <p className='font-dark text-center'>Consolidate financial data from multiple sources and categorize transactions up to 2 years of history. Analyze reports to reconcile activities in your account. </p>
           </Col>
         </Row>
-        <Row className="my-5">
+        <Row className="my-5 d-flex align-items-center">
           <Col md={6} className="partner-text px-5 d-flex flex-column align-items-center align-items-md-start justify-content-center">
               <h2 className="font-dark mb-2">Ready to start?</h2>
           </Col>

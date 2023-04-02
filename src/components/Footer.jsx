@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
@@ -12,13 +13,15 @@ function Footer() {
         <Container>
         <Row>
           <Col md={3} className="mb-3 d-flex justify-content-center justify-content-md-start">
-              <img src="/logowhite.svg" alt="" />
+            <Link to="/" className="navbar-logo">
+                <img src="/logowhite.svg" alt="" />
+            </Link>
           </Col>
           <Col md={6} className="mb-3">
             <Nav className="footer-links pe-3">
-                    <Nav.Link className="mx-2 fw-bold footer-link" href="#action1">Pricing</Nav.Link>
-                    <Nav.Link className="mx-2 fw-bold footer-link" href="#action2">About</Nav.Link>
-                    <Nav.Link className="mx-2 fw-bold footer-link" href="#action2">Contact</Nav.Link>
+              <Link to="/pricing" className="nav-link mx-2 fw-bold text-white">Pricing</Link>
+              <Link className="nav-link mx-2 fw-bold text-white">About</Link>
+              <Link className="nav-link mx-2 fw-bold text-white">Contact</Link>
             </Nav>
           </Col>
           <Col md={3} className="mb-3 social-icons">

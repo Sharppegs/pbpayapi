@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 
 
+
 function Hero() {
   return (
     <section className="section1">
