@@ -12,7 +12,7 @@ function App() {
   
   return (
     <div className="app">
-      
+      <img src="/bg-pattern-circle.svg" className='background-circle' />
       <NavBar />
         <AnimatedRoutes />
       <Footer />

@@ -41,6 +41,12 @@ body {
   
 }
 
+.app {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -62,7 +68,8 @@ select {
 }
 
 .transparent-btn,
-.access-btn {
+.access-btn,
+.form-btn {
   padding: 0.5em 2em;
   font-family: 'Public Sans', 'Serif';
   font-weight: 500;
@@ -73,12 +80,18 @@ select {
   z-index: 10;
 }
 
-.access-btn {
+.access-btn,
+.form-btn {
   background-color: var(--bg-light);
   border: 1px solid var(--bg-dark);
   color: var(--ff-dark);
   margin-top: 1.5em;
   padding: 0.5em 1.5em;
+}
+
+.form-btn {
+  width: 200px;
+  align-self: center
 }
 
 .transparent-btn:hover, 
@@ -89,10 +102,18 @@ select {
 }
 
 .access-btn:hover, 
-.access-btn:focus {
+.access-btn:focus,
+.form-btn:hover, 
+.form-btn:focus {
   background-color: var(--bg-dark);
   color: var(--ff-light);
   cursor: pointer;
+}
+
+@media(min-width: 768px) {
+  .form-btn {
+    align-self: start;
+  }
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -125,10 +146,11 @@ select {
 
 
 /* Typeography */
-H1 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 32px;}
-H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
-H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
-H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 20px;}
+H1 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 36px;}
+H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 32px;}
+H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
+H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
+H5 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
 
 p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
@@ -137,6 +159,7 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
     H2 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 56px;}
     H3 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 36px;}
     H4 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 28px;}
+    H5 {font-family: 'DM Serif Display', serif; font-weight: normal; font-size: 24px;}
     
     p {font-family: 'Public Sans', sans-serif; font-weight: 300; font-size: 15px;}
 }
@@ -183,15 +206,17 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
 .navbar {
   background-color: var(--bg-light);
-  background-image: url(/bg-pattern-circle.svg);
+  /* background-image: url(/bg-pattern-circle.svg);
   background-repeat: no-repeat;
-  background-position: top -245px right -200px;
+  background-position: top -245px right -200px; */
   color: var(--bg-dark);
 }
 
 .nav-link {
-  color: #36536B;
+  color: #FBFCFE;
   text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 0.5em;
 }
 
 .nav-link:hover,
@@ -201,6 +226,47 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
 .navbar-logo {
   margin-right: 2em;
+}
+
+.menu-toggle {
+  z-index: 10;
+  
+}
+
+.nav-bar-mobile,
+.offcanvas {
+  background-color: #1B262F !important;
+  color: #fff !important;
+  margin-left: 0;
+  width: 250px;
+}
+
+.btn-close {
+  color: #fff;
+}
+
+.btn-mobile {
+  display: block;
+}
+
+.nav-bar-mobile-expanded {
+  margin-left: -250px
+}
+
+
+
+
+@media (min-width: 992px) {
+  .btn-mobile {
+    display: none;
+  }
+
+  .nav-link {
+    color: #36536B;
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
 }
 
 /* section 1 */
@@ -215,7 +281,7 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 .background-circle-2,
 .background-circle-3,
 .background-circle-4 {
-  z-index: 0;
+  z-index: 1;
   position: absolute;
   top: -200px;
   width: 1080px; 
@@ -248,7 +314,8 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   border-radius: 25px;
   font-weight: 500;
   padding: 0.5em;
-  width: 100%;
+  width: 90%;
+  align-self: center;
 }
 
 .submit-btn:hover {
@@ -261,10 +328,11 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
 .email-input {
   border-radius: 20px;
-  padding-inline-start: 0.5em;
-  padding: 0.5em;
+  /* padding-inline-start: 0.5em; */
+  padding: 0.5em 1em;
   border: none;
-  width: 100%;
+  width: 90%;
+  align-self: center;
 }
 
 .contact-text {
@@ -278,8 +346,9 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
 
 .background-circle {
   top: -340px;
-  right: -200px;
-  width: 780px;
+  right: -150px;
+  width: 580px;
+  
 }
 
 .background-circle-2 {
@@ -295,8 +364,16 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   width: 780px;
 }
 
-.hero-form,
-.info-form {
+
+.smartphone-img {
+  height: 550px;
+}
+
+}
+
+@media (min-width: 992px) {
+  .hero-form,
+  .info-form {
   flex-direction: row;
   position: relative;
 }
@@ -327,18 +404,12 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   align-self: start;
 }
 
-
-.smartphone-img {
-  height: 550px;
-}
-
 .left {
   display: inline-block;
   margin-right: 5em;
   margin-top: 1.5em;
   align-self: center;
 }
-
 }
 
 /* partners section */
@@ -396,10 +467,6 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   }
 }
 
-.app {
-  overflow: hidden;
-}
-
 .footer {
   background-color: var(--bg-dark);
   color: #fff;
@@ -442,6 +509,12 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   margin-bottom: 1em;
 }
 
+.plan-features {
+  width: 100%;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+}
+
 .plan-text-desc {
   text-align: center;
   color: var(--ff-grey);
@@ -460,11 +533,154 @@ p {font-family:'Public Sans', sans-serif; font-weight: 400; font-size: 16px;}
   margin-right: 1em;
 }
 
+.unavailable-text {
+  opacity: 0.4;
+}
+
 @media (min-width: 769px) {
   .plan-text-desc {
     text-align: left;
     
   }
+}
+
+/* About Page */
+
+.about-container {
+  padding: 1em;
+}
+
+.about-header {
+  padding-right: 0
+}
+
+.page-break {
+  width: 100%;
+  height: 350px;
+  background-color: #D8D8D8;
+  background-image: url(/mobile-team-members.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.about-figures {
+  font-size: 56px !important;
+}
+
+.stats-group {
+  border-top: 1px solid rgba(54, 83, 107, 0.4);
+  border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+  padding: 1.5em 0;
+}
+
+.stats {
+  border-top: none;
+  border-bottom: none;
+}
+
+@media (min-width: 768px) {
+  .about-header {
+    padding-right: 5em;
+  }
+
+  .about-container {
+    padding: 0 6em;
+  }
+
+  .stats-group {
+    border: none;
+  }
+
+  .stats {
+    border-top: 1px solid rgba(54, 83, 107, 0.4);
+    border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+    padding: 1em 0;
+    width: 350px;
+  }
+
+  .page-break {
+    background-image: url(/image-team-members.jpg);
+    
+  }
+}
+
+/* Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form > input {
+  border: none;
+  border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+  background-color: var(--bg-light);
+  color: var(--bg-dark);
+  margin: 1em 0;
+  outline: none; 
+}
+
+label {
+  font-weight: bold;
+  color: var(--ff-dark);
+}
+
+.message {
+  width: 100%; 
+  min-height: 150px; 
+  resize: vertical; 
+  overflow: auto; 
+  word-wrap: break-word;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  background-color: var(--bg-light);
+  color: var(--bg-dark); 
+  border: none;
+  border-bottom: 1px solid rgba(54, 83, 107, 0.4);
+  outline: none;
+  line-height: 2.0;
   
+}
+
+.checkbox {
+  margin-right: 1em;
+}
+
+.innovators {
+  padding: 0 4em;
+}
+
+.client-logos-dark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  width: 100%;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.logo-dark {
+  width: 125px;
+  margin-right: 1em;
+  margin-bottom: 1.5em;
+}
+
+.error {
+  color: red;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .client-logos-dark {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+  }
+
+  .logo-dark {
+    margin: 1em 0;
+  }
 }
 

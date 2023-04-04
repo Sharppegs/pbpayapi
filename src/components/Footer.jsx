@@ -17,14 +17,14 @@ function Footer() {
                 <img src="/logowhite.svg" alt="" />
             </Link>
           </Col>
-          <Col md={6} className="mb-3">
+          <Col lg={6} className="mb-3">
             <Nav className="footer-links pe-3">
               <Link to="/pricing" className="nav-link mx-2 fw-bold text-white">Pricing</Link>
-              <Link className="nav-link mx-2 fw-bold text-white">About</Link>
-              <Link className="nav-link mx-2 fw-bold text-white">Contact</Link>
+              <Link to="/about" className="nav-link mx-2 fw-bold text-white">About</Link>
+              <Link to="/contact" className="nav-link mx-2 fw-bold text-white">Contact</Link>
             </Nav>
           </Col>
-          <Col md={3} className="mb-3 social-icons">
+          <Col lg={3} className="mb-3 social-icons">
               <img className="m-2" src="/twitter.svg" alt="" />
               <img className="m-2" src="/facebook.svg" alt="" />
               <img className="m-2" src="/linkedin.svg" alt="" />
