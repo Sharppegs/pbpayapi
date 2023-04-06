@@ -7,10 +7,10 @@ import { motion } from "framer-motion"
 function About() {
   return (
     <motion.div className="page1"
-      initial={{width: 0}}
-      animate={{width: "100%"}}
-      exit={{x: window.innerWidth}}
-      transition={{ delay: 0.2 }}
+      // initial={{width: 0}}
+      // animate={{width: "100%"}}
+      // exit={{x: window.innerWidth}}
+      // transition={{ delay: 0.2 }}
     >
       <section className="section1">
       <Container className='about-container'>

@@ -2,6 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { motion, useAnimation } from 'framer-motion'
 
 
 
@@ -16,6 +17,20 @@ function Pricegrid() {
         <div className="pricing-plans">
           <Row className="g-5">
             <Col lg={4} className="d-flex flex-column align-items-center align-items-lg-start justify-content-between mb-5">
+            <motion.div 
+                initial={{ translateX: "-400px"}}
+                animate={{ translateX: 0}}
+                transition={{
+                  duration: 1.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+              }}
+              >
               <div className="plan d-flex flex-column align-items-center align-items-lg-start">
                 <h3 className='font-red mb-3'>Free Plan</h3>
                 <p className="plan-text-desc mb-3">Build and test using our core set of products with up to 100 API requests </p>
@@ -31,8 +46,23 @@ function Pricegrid() {
                 <li className='d-flex plan-list-item'><p className='tick invisible'>✓</p><p class="unavailable-text">Income</p></li>
               </ul>
               <button className="access-btn">Request Access</button>
+              </motion.div>
             </Col>
             <Col lg={4} className="d-flex flex-column align-items-center align-items-lg-start justify-content-between mb-5">
+              <motion.div 
+                initial={{ translateX: "-600px"}}
+                animate={{ translateX: 0}}
+                transition={{
+                  duration: 2,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+              }}
+              >
               <div className="plan d-flex flex-column align-items-center align-items-lg-start">
                 <h3 className='font-red mb-3'>Basic Plan</h3>
                 <p className="plan-text-desc mb-3">Launch your project with unlimited requests and no contractual minimums</p>
@@ -48,8 +78,23 @@ function Pricegrid() {
                 <li className='d-flex plan-list-item'><p className='tick invisible'>✓</p><p class="unavailable-text">Income</p></li>
               </ul> 
               <button className="access-btn">Request Access</button>
+              </motion.div>
             </Col>
             <Col lg={4} className="d-flex flex-column align-items-center align-items-lg-start justify-content-between mb-5">
+            <motion.div 
+                initial={{ translateX: "-800px"}}
+                animate={{ translateX: 0}}
+                transition={{
+                  duration: 2.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                  scale: {
+                    type: "spring",
+                    damping: 5,
+                    stiffness: 100,
+                    restDelta: 0.001
+                }
+              }}
+              >
               <div className="plan d-flex flex-column align-items-center align-items-lg-start">
                 <h3 className='font-red mb-3'>Premium Plan</h3>
                 <p className="plan-text-desc mb-3">Get tailored solutions, volume pricing, and dedicated support for your team</p>
@@ -65,6 +110,7 @@ function Pricegrid() {
                 <li className='d-flex plan-list-item'><p className='tick'>✓</p><p>Income</p></li>
               </ul> 
               <button className="access-btn">Request Access</button>
+              </motion.div>
             </Col>
           </Row>
         </div>
